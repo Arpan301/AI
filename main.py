@@ -1,4 +1,5 @@
 import pyttsx3
+import random
 import speech_recognition as sr
 import datetime
 import time
@@ -47,7 +48,7 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('arpanroy.cs2020@nsec.ac.in', 'your-password')
+    server.login('arpanroy.com', 'your-password')
     server.sendmail('youremail@gmail.com', to, content)
     server.close()
 
@@ -123,16 +124,25 @@ if __name__ == "__main__":
             codePath = "C:\\Users\\Arpan roy\\VirtualBox VMs\\CentOS_8.3.2011_VBM_LinuxVMImages.COM\\CentOS_8.3.2011_VBM_LinuxVMImages.COM.vbox"
             os.startfile(codePath)
             break
+        elif 'tell me a joke' in query or 'say me a joke' in query or 'say a joke' in query or 'tell a joke' in query:
+            a = "What can coronavirus do that the United States government can’t? Stop school shootings."
+            b = "I told my therapist that I am having suicidal thoughts, He now makes me pay in advance."
+            list = [a, b]
+            item = random.choice(list)
+            print(item)
+            speak(item)
+            break
         elif 'email to' in query:
             try:
                 speak("What should I write in email")
                 sp=input("enter what u want to send")
                 to = "bajirao.arpan@gmail.com"
-                sendEmail("arpanroy.cs2020@nsec.ac.in", sp)
+                sendEmail("arpanroy.com", sp)
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
                 speak("Sorry darling   arpan   , please sent the email by yourself")
+            break
         elif 'remember' in query:
             rem=query.split(" ")
             pi = rem[1::]
