@@ -99,7 +99,7 @@ if __name__ == "__main__":
             music_dir = 'C:\\Users\\Arpan roy\\AppData\\Local\\Microsoft\\WindowsApps\\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\\Spotify.exe'
             os.startfile(music_dir)
             break
-        elif 'what is the time' in query or 'what is the time right now' in query:
+        elif 'what is the time' in query or 'what is the time right now' in query or 'time right now' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
             break
