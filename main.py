@@ -1,6 +1,6 @@
 import pyttsx3
 import random
-import speech_recognition as sr
+import speech_recognition as sound
 import wikipedia
 import datetime
 import time
@@ -16,24 +16,9 @@ engine.setProperty('voice', voices[1].id)
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
-def arunavo():
-    hour = int(datetime.datetime.now().hour)
-    if hour>=0 and hour<12:
-        speak("Good Morning!")
-
-    elif hour>=12 and hour<18:
-        speak("Good Afternoon!")
-
-    else:
-        speak("Good Evening!")
-    time.sleep(2)
-    nam= username+ " ,what can i do for u"
-    speak(nam)
-
 def takeCommand():
-
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
+    r = sound.Recognizer()
+    with sound.Microphone() as source:
         print("Say something....")
         r.pause_threshold = 1
         audio = r.listen(source)
@@ -47,13 +32,26 @@ def takeCommand():
         return "None"
     return query
 
-def sendEmail(to, content):
+def send(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('arpanroy@gg.com', 'passwd')
-    server.sendmail('gmaiiiiilll@gmail.com', to, content)
+    server.login('arpanroy@gg.com', 'your-password')
+    server.sendmail('youremail@gmail.com', to, content)
     server.close()
+def arunavo():
+    hour = int(datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("Good Morning!")
+
+    elif hour>=12 and hour<18:
+        speak("Good Afternoon!")
+
+    else:
+        speak("Good Evening!")
+    time.sleep(2)
+    nam= username+ " ,what can i do for u"
+    speak(nam)
 
 if __name__ == "__main__":
     arunavo()
@@ -193,7 +191,7 @@ if __name__ == "__main__":
                 speak("What should I write in email")
                 sp=input("enter what u want to send")
                 to = "arpan@gmail.com"
-                sendEmail("arpanroy@nsec.in", sp)
+                send("arpanroy@nsec.in", sp)
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
