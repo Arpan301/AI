@@ -1,13 +1,15 @@
 import pyttsx3
 import random
 import speech_recognition as sr
+import wikipedia
 import datetime
 import time
-import wikipedia
+import getpass
+import pywhatkit as kit
 import webbrowser
 import os
 import smtplib
-import pywhatkit as kit
+username = getpass.getuser()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
@@ -25,7 +27,8 @@ def arunavo():
     else:
         speak("Good Evening!")
     time.sleep(2)
-    speak("hey arpan...... whats up, say how may i help u")
+    nam= username+ " ,what can i do for u"
+    speak(nam)
 
 def takeCommand():
 
@@ -48,8 +51,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('arpanroy.cs2020@nsec.ac.in', 'your-password')
-    server.sendmail('youremail@gmail.com', to, content)
+    server.login('arpanroy@gg.com', 'passwd')
+    server.sendmail('gmaiiiiilll@gmail.com', to, content)
     server.close()
 
 if __name__ == "__main__":
@@ -57,13 +60,13 @@ if __name__ == "__main__":
     while True:
         query = takeCommand().lower()
         if 'what is meant' in query or 'stands for' in query or 'what is the meaning of' in query:
-            speak('Searching Wikipedia...')
+            speak('Searching..')
             query = query.replace("wikipedia", "")
             results = wikipedia.summary(query, sentences=5)
             speak("According to Wikipedia")
             print(results)
             speak(results)
-            time.sleep(2)
+            time.sleep(1)
             speak('if u think this does not match your answer try saying search for')
 
         elif 'open youtube and play the song' in query:
@@ -74,11 +77,15 @@ if __name__ == "__main__":
             kit.playonyt(z)
             break
         elif 'open youtube and play ' in query:
-            zz=query.split(" ")
-            a = zz[4::]
-            z = ' '.join([str(elem) for elem in a])
-            speak(f"playing,  {z}")
-            kit.playonyt(z)
+            try:
+                zz=query.split(" ")
+                a = zz[4::]
+                z = ' '.join([str(elem) for elem in a])
+                speak(f"playing,  {z}")
+                kit.playonyt(z)
+            except Exception:
+                print("u don't have youtube lol")
+                speak("u don't have youtube lol")
             break
         elif 'youtube' in query:
             zo=query
@@ -91,38 +98,72 @@ if __name__ == "__main__":
             kit.search(zx)
             break
         elif '.com' in query:
-            ss=query.split(" ")
-            dd=ss[1::]
-            zc = ' '.join([str(elem) for elem in dd])
-            webbrowser.open(zc)
+            try:
+                ss=query.split(" ")
+                dd=ss[1::]
+                zc = ' '.join([str(elem) for elem in dd])
+                webbrowser.register('firefox', None,webbrowser.BackgroundBrowser("C://Program Files//Mozilla Firefox//firefox.exe"))
+                webbrowser.get('firefox').open(zc)
+            except Exception:
+                print("set your browser")
+                speak("set your browser")
             break
         elif 'play music' in query:
-            music_dir = 'C:\\Users\\Arpan roy\\AppData\\Local\\Microsoft\\WindowsApps\\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\\Spotify.exe'
-            os.startfile(music_dir)
+            try:
+                music_dir = 'C:\\Users\\Arpan roy\\AppData\\Local\\Microsoft\\WindowsApps\\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\\Spotify.exe'
+                os.startfile(music_dir)
+            except Exception:
+                print("spotify is not installed try on youtube")
+                speak("spotify is not installed try on youtube")
             break
         elif 'what is the time' in query or 'what is the time right now' in query or 'time right now' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
             break
         elif 'open windows 7' in query:
-            codePath = "C:\\Users\\Arpan roy\\VirtualBox VMs\\windows 7\\windows 7.vbox"
-            os.startfile(codePath)
+            try:
+                homedir = os.path.expanduser("~")
+                codePath = "\\VirtualBox VMs\\windows 7\\windows 7.vbox"
+                os.startfile(homedir+codePath)
+            except Exception:
+                print("u don't have windows 7")
+                speak("u don't have windows 7")
             break
         elif 'open metasploitable 2' in query:
-            codePath = "C:\\Users\\Arpan roy\\VirtualBox VMs\\metasploitable 2\\metasploitable 2.vbox"
-            os.startfile(codePath)
+            try:
+                homedir = os.path.expanduser("~")
+                codePath = "\\VirtualBox VMs\\metasploitable 2\\metasploitable 2.vbox"
+                os.startfile(homedir+codePath)
+            except Exception:
+                print("u don't have metasploitable in your machine")
+                speak("u don't have metasploitable in your machine")
             break
         elif 'open windows 10' in query:
-            codePath = "C:\\Users\\Arpan roy\\VirtualBox VMs\\windows 10\\windows 10.vbox"
-            os.startfile(codePath)
+            try:
+                homedir = os.path.expanduser("~")
+                codePath = "\\VirtualBox VMs\\windows 10\\windows 10.vbox"
+                os.startfile(homedir+codePath)
+            except Exception:
+                print("you don't have windows 10 on virtual box")
+                speak("you don't have windows 10 on virtual box")
             break
         elif 'open kali linux' in query:
-            codePath = "C:\\Users\\Arpan roy\\VirtualBox VMs\\kali\\kali.vbox"
-            os.startfile(codePath)
+            try:
+                homedir = os.path.expanduser("~")
+                codePath = "\\VirtualBox VMs\\kali\\kali.vbox"
+                os.startfile(homedir+codePath)
+            except Exception:
+                print("you don't have kali on virtual box")
+                speak("you don't have kali on virtual box")
             break
         elif 'open centos' in query:
-            codePath = "C:\\Users\\Arpan roy\\VirtualBox VMs\\CentOS_8.3.2011_VBM_LinuxVMImages.COM\\CentOS_8.3.2011_VBM_LinuxVMImages.COM.vbox"
-            os.startfile(codePath)
+            try:
+                homedir = os.path.expanduser("~")
+                codePath = "\\VirtualBox VMs\\CentOS_8.3.2011_VBM_LinuxVMImages.COM\\CentOS_8.3.2011_VBM_LinuxVMImages.COM.vbox"
+                os.startfile(homedir+codePath)
+            except Exception:
+                print("you don't have centos on virtual box")
+                speak("you don't have centos 10 on virtual box")
             break
         elif 'tell me a joke' in query or 'say me a joke' in query or 'say a joke' in query or 'tell a joke' in query:
             a = "What can coronavirus do that the United States government can’t? Stop school shootings."
@@ -143,16 +184,20 @@ if __name__ == "__main__":
             itt=random.choice(ll)
             print(itt)
             speak(itt)
+            break
+        elif 'what can you do' in query:
+            print("i can do everything, just try me")
+            speak("i can do everything, just try me")
         elif 'email to' in query:
             try:
                 speak("What should I write in email")
                 sp=input("enter what u want to send")
-                to = "bajirao.arpan@gmail.com"
-                sendEmail("arpanroy.cs2020@nsec.ac.in", sp)
+                to = "arpan@gmail.com"
+                sendEmail("arpanroy@nsec.in", sp)
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
-                speak("Sorry darling   arpan   , please sent the email by yourself")
+                speak("Sorry darling arpan , please sent the email by yourself")
             break
         elif 'remember' in query:
             rem=query.split(" ")
