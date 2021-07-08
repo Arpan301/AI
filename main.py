@@ -16,7 +16,7 @@ engine.setProperty('voice', voices[1].id)
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
-def takeCommand():
+def takeinput():
     r = sound.Recognizer()
     with sound.Microphone() as source:
         print("Say something....")
@@ -56,7 +56,7 @@ def arunavo():
 if __name__ == "__main__":
     arunavo()
     while True:
-        query = takeCommand().lower()
+        query = takeinput().lower()
         if 'what is meant' in query or 'stands for' in query or 'what is the meaning of' in query:
             speak('Searching..')
             query = query.replace("wikipedia", "")
