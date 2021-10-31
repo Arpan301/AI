@@ -1,7 +1,8 @@
 #Let your work be done by Ai by voice recognition.
 
 Make sure you have the latest version of python to avoid any compilation errors.
-
+taylor
+juowd
 
 
 1.pyttsx3
