@@ -26,9 +26,14 @@ Neccessary library packages to be installed using #pip install :
 
 11. smtplib
 
-If you still face any problems in voice recognition, download a package of unofficial binary from
 
-https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
+If you still face any problems in voice recognition, download a package of unofficial binary from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
+
+#Install that binary file in your api or command prompt :- 
+
+64-bit : python install PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.wh
+
+32-bit : python install PyAudio‑0.2.11‑cp310‑cp310‑win32.whl
 
 
 #Download a .whl file named
@@ -40,19 +45,10 @@ https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
 For errors in .whl file install "pipwin install".
 
 
-#Install that binary file in your api or command prompt :- 
-
-64-bit : python install PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.wh
-
-32-bit : python install PyAudio‑0.2.11‑cp310‑cp310‑win32.whl
-
-
-
 Hope it works !!
 
 For any queries you can mail me  at royarpan28@protonmail.com
 
-Happy AI exploring !!
 
 
 
