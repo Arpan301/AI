@@ -1,4 +1,4 @@
-#Let your work done by Ai by your voice
+#Let your work be done by Ai by your voice
 
 this code is written in python . Thus use latest version of python to run it
 
@@ -6,7 +6,8 @@ this code is written in python . Thus use latest version of python to run it
 you may face many error during compilation, that's not my fault
 
 
-you confirm that 
+you confirm that
+
 1.pyttsx3
 
 2.random
