@@ -1,4 +1,4 @@
-#Let your work be done by Ai by your voice
+#Let your work be done by Ai by voice recognition
 
 this code is written in python . Thus use latest version of python to run it
 
