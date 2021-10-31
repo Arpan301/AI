@@ -1,6 +1,6 @@
-#Let your work be done by Ai by voice recognition
+#Let your work be done by Ai by voice recognition.
 
-this code is written in python . Thus use latest version of python to run it
+This code is written in python . Thus use latest version of python to run it
 
 
 you may face many error during compilation, that's not my fault
