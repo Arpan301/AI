@@ -1,76 +1,58 @@
-#Let your work be done by Ai by voice recognition.
+#Tired of typing ? Try voice recognition !!
 
 Make sure you have the latest version of python to avoid any compilation errors.
-taylor
-juowd
 
+Neccessary library packages to be installed using #pip install :
 
-1.pyttsx3
+1. pyttsx3
 
-2.random
+2. random
 
-3.speech_recognition 
+3. speech_recognition 
 
-4.wikipedia
+4. wikipedia
 
-5.datetime
+5. datetime
 
-6.time
+6. time
 
-7.getpass
+7. getpass
 
-8.pywhatkit
+8. pywhatkit
 
-9.webbrowser
+9. webbrowser
 
-10.os
+10. os
 
-11.smtplib
+11. smtplib
 
-These packages ar installed within your computer
-
-and if it's not the you should try using
-
-#pip install (package name).
-
-Must note that pip is installed within your computer and updated.
-
-You may still face a major error during runtime of speech recognition
-
-
-the package of speech recognition also make problem
-
-then , try #pip install SpeechRecognition
-
-Then a runtime error may occur of PyAudio
-
-then you should install a package of unofficial binaries from
+If you still face any problems in voice recognition, download a package of unofficial binary from
 
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
 
-and download a .whl file named "PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.whl" for 64bit architecture machine
 
-and "PyAudio‑0.2.11‑cp310‑cp310‑win32.whl" for 32bit architecture machine.
+#Download a .whl file named
 
-and try installing them in your api or command prompt
+64-bit : "PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.whl" 
 
-using python install PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.wh
+32-bit : "PyAudio‑0.2.11‑cp310‑cp310‑win32.whl"
 
-or python install PyAudio‑0.2.11‑cp310‑cp310‑win32.whl
-
-or you can use python3 to run instead of python
-
-and if any error occurs then download pipwin by
+For errors in .whl file install "pipwin install".
 
 
-#pip install pipwin
-and then try pipwin install the .whl file.
+#Install that binary file in your api or command prompt :- 
 
-Hope it will work fine.
+64-bit : python install PyAudio‑0.2.11‑cp310‑cp310‑win_amd64.wh
 
-Any issues you can mail me royarpan28@protonmail.com
+32-bit : python install PyAudio‑0.2.11‑cp310‑cp310‑win32.whl
 
-happy 5th Gen
+
+
+Hope it works !!
+
+For any queries you can mail me  at royarpan28@protonmail.com
+
+Happy AI exploring !!
 
 
 
