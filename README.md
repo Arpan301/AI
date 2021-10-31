@@ -1,12 +1,8 @@
 #Let your work be done by Ai by voice recognition.
 
-This code is written in python . Thus use latest version of python to run it
+Make sure you have the latest version of python to avoid any compilation errors.
 
 
-you may face many error during compilation, that's not my fault
-
-
-you confirm that
 
 1.pyttsx3
 
